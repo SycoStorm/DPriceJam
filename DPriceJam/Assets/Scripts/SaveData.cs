@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveData : MonoBehaviour
+public class SaveData 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<LevelScoreData> ScoreByLevels;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class UserData
+{
+   public string level;
+   public string userName;
+   public string time;
+   public string opposites;
+   public string same;
+   public string totalScore;
+}
+
+public class LevelScoreData
+{
+    public List<UserData> userScores;
 }
