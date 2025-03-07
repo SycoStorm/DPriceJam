@@ -358,6 +358,7 @@
 "Assets/Scripts/Card.cs"
 "Assets/Scripts/Data.cs"
 "Assets/Scripts/GameController.cs"
+"Assets/Scripts/LevelManager.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/SaveData.cs"
 "Assets/Scripts/SaveManager.cs"
