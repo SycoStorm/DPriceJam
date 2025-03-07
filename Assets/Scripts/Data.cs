@@ -4,13 +4,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameData", menuName = "ScriptableObjects/GameData", order = 2)]
 public class Data : ScriptableObject
 {
-    string previousLevel;
-    string currentLevel;
+    int previousLevel = 0;
+    int currentLevel = 0;
 
     int turn = 0;
 
    public int Turn
-    {
+   {
         get
         {
             return turn;
@@ -29,5 +29,17 @@ public class Data : ScriptableObject
 
            
         }
+   }
+
+    public void ResetAllLevels()
+    {
+        currentLevel = 0;
+        previousLevel = 0;
+    }
+
+    public void ChangeNextLevel()
+    {
+        currentLevel += 1;
+        previousLevel = currentLevel - 1;
     }
 }
