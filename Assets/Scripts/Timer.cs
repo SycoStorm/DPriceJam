@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   [SerializeField] bool isTrackingTime = false;
+    private float timer = 0;
+    [SerializeField] TextMeshProUGUI timerText; 
+
+    private void Update()
     {
-        
+        if(timerText && isTrackingTime)
+        {
+            timer += Time.deltaTime;
+            timerText.text = timer.ToString("#.00");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

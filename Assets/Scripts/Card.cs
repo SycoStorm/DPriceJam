@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class Card:ScriptableObject  
 {
-    [SerializeField] int pointsGained;
+    [SerializeField] int pointsGained = 1;
     [SerializeField] Image cardImage;
     [SerializeField] int batchId; //The batch of 4 cards, 2 cards will have a matchID of 1 and 2 cards will have a matchID of 2.  1 and 1 are matches, 2 and 2 are matches, 1 and 2 are opposites.
     [SerializeField] int matchId; // either 1 or 2 
-    [SerializeField] int pointsMultiplier;
+    [SerializeField] int pointsMultiplier = 2;
 
     public Image GetImage()
     {
