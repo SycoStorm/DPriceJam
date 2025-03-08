@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73d096f4c8124dadb8dc24658598309, type: 3}
+  m_Name: Death
+  m_EditorClassIdentifier: 
+  pointsGained: 1
+  sprite: {fileID: 21300000, guid: 58a3bc0c0f85ea543ac7aba5ec2fe7d8, type: 3}
+  batchId: 0
+  matchId: 0
+  pointsMultiplier: 2

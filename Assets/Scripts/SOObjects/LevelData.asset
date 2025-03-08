@@ -19,6 +19,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 631f4da5028747b4b81ccbca8146e597, type: 2}
   - {fileID: 11400000, guid: 2546ffaf17510ab47acf77cb13e0a5e9, type: 2}
   - {fileID: 11400000, guid: e59663f9a4dfb8540a1b7e2d32f18c44, type: 2}
-  LevelTwoCards: []
-  LevelThreeCards: []
+  LevelTwoCards:
+  - {fileID: 11400000, guid: 5be9b122d3040c64d8dea3664a81764f, type: 2}
+  - {fileID: 11400000, guid: 93863948499b2fe429a72e07890df6be, type: 2}
+  - {fileID: 11400000, guid: e301d6d6dce0e3b42b37e78949589ced, type: 2}
+  - {fileID: 11400000, guid: 631f4da5028747b4b81ccbca8146e597, type: 2}
+  - {fileID: 11400000, guid: 2546ffaf17510ab47acf77cb13e0a5e9, type: 2}
+  - {fileID: 11400000, guid: e59663f9a4dfb8540a1b7e2d32f18c44, type: 2}
+  - {fileID: 11400000, guid: 73898dd433ac6c74195939c0f45d5b8d, type: 2}
+  - {fileID: 11400000, guid: 80b851e3e1021ce4680c2837c32c16f4, type: 2}
+  LevelThreeCards:
+  - {fileID: 11400000, guid: 5be9b122d3040c64d8dea3664a81764f, type: 2}
+  - {fileID: 11400000, guid: 93863948499b2fe429a72e07890df6be, type: 2}
+  - {fileID: 11400000, guid: e301d6d6dce0e3b42b37e78949589ced, type: 2}
+  - {fileID: 11400000, guid: 631f4da5028747b4b81ccbca8146e597, type: 2}
+  - {fileID: 11400000, guid: 2546ffaf17510ab47acf77cb13e0a5e9, type: 2}
+  - {fileID: 11400000, guid: e59663f9a4dfb8540a1b7e2d32f18c44, type: 2}
+  - {fileID: 11400000, guid: 73898dd433ac6c74195939c0f45d5b8d, type: 2}
+  - {fileID: 11400000, guid: 80b851e3e1021ce4680c2837c32c16f4, type: 2}
   gameData: {fileID: 11400000, guid: 6c609574d0dd1eb43aebd7e93beaa88c, type: 2}
