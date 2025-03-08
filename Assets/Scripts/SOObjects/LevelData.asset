@@ -21,3 +21,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e59663f9a4dfb8540a1b7e2d32f18c44, type: 2}
   LevelTwoCards: []
   LevelThreeCards: []
+  gameData: {fileID: 11400000, guid: 6c609574d0dd1eb43aebd7e93beaa88c, type: 2}

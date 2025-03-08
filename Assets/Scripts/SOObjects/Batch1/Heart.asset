@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heart
   m_EditorClassIdentifier: 
   pointsGained: 1
-  cardImage: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a11fb6a38fd1c6f4aa006e887bfe6d5d, type: 3}
   batchId: 1
   matchId: 1
   pointsMultiplier: 2

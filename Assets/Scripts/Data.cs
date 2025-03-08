@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "GameData", menuName = "ScriptableObjects/GameData", order = 2)]
 public class Data : ScriptableObject
 {
     [SerializeField] int previousLevel = 0;
-    [SerializeField] int currentLevel = 0;
+    [SerializeField] int currentLevel = 1;
     [SerializeField] int PreviousLevelScore = 0;
     [SerializeField] int currentLevelScore = 0;
     [SerializeField] int turn = 0;
@@ -33,9 +34,14 @@ public class Data : ScriptableObject
         }
    }
 
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
+    }
     public void ResetAllLevelsAndScore()
     {
-        currentLevel = 0;
+        currentLevel = 1;
         previousLevel = 0;
         PreviousLevelScore = 0;
         currentLevelScore = 0;
@@ -51,6 +57,7 @@ public class Data : ScriptableObject
         {
             currentLevel += 1;
             previousLevel = currentLevel - 1;
+            SceneManager.LoadScene("GameScene");
         }
         else
         {
@@ -61,5 +68,10 @@ public class Data : ScriptableObject
     void FinishedGame()
     {
         GameActions.FinishGame?.Invoke();
+    }
+
+    public void OnLevelEnd(int score)
+    {
+        PreviousLevelScore = score;
     }
 }

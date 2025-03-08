@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   previousLevel: 0
-  currentLevel: 0
+  currentLevel: 1
   PreviousLevelScore: 0
   currentLevelScore: 0
   turn: 0

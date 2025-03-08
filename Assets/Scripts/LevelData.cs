@@ -7,12 +7,16 @@ public class LevelData : ScriptableObject
     [SerializeField] List<Card> LevelOneCards = new List<Card>();
     [SerializeField] List<Card> LevelTwoCards = new List<Card>();
     [SerializeField] List<Card> LevelThreeCards = new List<Card>();
-
-     public List<Card> GetCardSets(int currentLevel)
+    [SerializeField] Data gameData;
+    int currentLevel;
+     public List<Card> GetCardSets()
     {
+        Debug.Log($"Current Level is {gameData.GetCurrentLevel()}");
+        currentLevel = gameData.GetCurrentLevel();
         switch(currentLevel)
         {
             case 1:
+                
                 return LevelOneCards;
               
             case 2:
@@ -26,5 +30,10 @@ public class LevelData : ScriptableObject
                 return null;
                 
         }
+    }
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
     }
 }

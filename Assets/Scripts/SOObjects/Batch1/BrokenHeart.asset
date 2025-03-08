@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BrokenHeart
   m_EditorClassIdentifier: 
   pointsGained: 1
-  cardImage: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 36717fcf7d7a04d4799112a497ffde59, type: 3}
   batchId: 1
   matchId: 2
   pointsMultiplier: 2

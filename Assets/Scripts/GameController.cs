@@ -140,4 +140,10 @@ public class GameController : MonoBehaviour
             data.ResetAllLevelsAndScore();
         }
     }
+
+    public void FinilizeData()
+    {
+        data.OnLevelEnd(currentScore);
+        data.ChangeNextLevel();
+    }
 }

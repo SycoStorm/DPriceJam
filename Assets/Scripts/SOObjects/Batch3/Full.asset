@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Full
   m_EditorClassIdentifier: 
   pointsGained: 1
-  cardImage: {fileID: 0}
+  sprite: {fileID: 21300000, guid: c8653a3a647806649aec029913bf463d, type: 3}
   batchId: 3
   matchId: 1
   pointsMultiplier: 2
