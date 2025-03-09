@@ -23,9 +23,13 @@ public class MainMenu : MonoBehaviour
     }
     public void OnClickPlay()
     {
+       
         SceneManager.LoadScene("GameScene");
     }
-
+    private void Awake()
+    {
+        SaveManager.GetHighScore();
+    }
     public void CheckEditorState(PlayModeStateChange state)
     {
         if (state == PlayModeStateChange.ExitingPlayMode)

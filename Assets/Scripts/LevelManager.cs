@@ -12,14 +12,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField] List<InGameCard> LevelOneVisualCards = new List<InGameCard>();
     [SerializeField] List<InGameCard> LevelTwoVisualCards = new List<InGameCard>();
     [SerializeField] List<InGameCard> LevelThreeVisualCards = new List<InGameCard>();
-    private void Awake()
-    {
-        LoadCardData();
-    }
+
     void Start()
     {
-        CheckLevelForVisualSet();
-        PopulateCards();
+        currentLevel = levelData.GetCurrentLevel();
+        if (currentLevel <= 3)
+        {
+            LoadCardData();
+            CheckLevelForVisualSet();
+            PopulateCards();
+        }
     }
     void LoadCardData()
     {      
@@ -52,6 +54,7 @@ public class LevelManager : MonoBehaviour
         {
             if (inPlayCards[i].cardData == null)
             {
+                inPlayCards[i].ForceFlipped();
                 inPlayCards[i].gameObject.SetActive(false);
             }
         }

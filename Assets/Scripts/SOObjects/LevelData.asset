@@ -37,4 +37,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e59663f9a4dfb8540a1b7e2d32f18c44, type: 2}
   - {fileID: 11400000, guid: 73898dd433ac6c74195939c0f45d5b8d, type: 2}
   - {fileID: 11400000, guid: 80b851e3e1021ce4680c2837c32c16f4, type: 2}
+  - {fileID: 11400000, guid: 0b127e8981b49d143969cd46de108d72, type: 2}
+  - {fileID: 11400000, guid: 368a3cd95df4f3441bc4135eddd21596, type: 2}
   gameData: {fileID: 11400000, guid: 6c609574d0dd1eb43aebd7e93beaa88c, type: 2}

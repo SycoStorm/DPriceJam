@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "GameData", menuName = "ScriptableObjects/GameData", order = 2)]
 public class Data : ScriptableObject
 {
-    [SerializeField] int previousLevel = 0;
     [SerializeField] int currentLevel = 1;
-    [SerializeField] int PreviousLevelScore = 0;
     [SerializeField] int currentLevelScore = 0;
     [SerializeField] int turn = 0;
     [SerializeField] int maxLevels = 3;
@@ -33,7 +31,10 @@ public class Data : ScriptableObject
            
         }
    }
-
+    public int  GetOverallScore()
+    {
+        return currentLevelScore;
+    }
 
     public int GetCurrentLevel()
     {
@@ -42,8 +43,6 @@ public class Data : ScriptableObject
     public void ResetAllLevelsAndScore()
     {
         currentLevel = 1;
-        previousLevel = 0;
-        PreviousLevelScore = 0;
         currentLevelScore = 0;
         if(Turn > 0)
         {
@@ -53,25 +52,21 @@ public class Data : ScriptableObject
 
     public void ChangeNextLevel()
     {
-        if (currentLevel > maxLevels)
-        {
+
             currentLevel += 1;
-            previousLevel = currentLevel - 1;
             SceneManager.LoadScene("GameScene");
-        }
-        else
-        {
-            FinishedGame();
-        }
+
     }
 
-    void FinishedGame()
+    public void BackToMainMenu()
     {
-        GameActions.FinishGame?.Invoke();
+        ResetAllLevelsAndScore();
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void OnLevelEnd(int score)
     {
-        PreviousLevelScore = score;
+        currentLevelScore = score;
+        
     }
 }

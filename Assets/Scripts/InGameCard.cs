@@ -13,7 +13,10 @@ public class InGameCard : MonoBehaviour
 
     bool isFlipped = false;
 
-
+    public void ForceFlipped()
+    {
+        isFlipped = true;
+    }
     public void OnClickFlip()
     {
         rend.material = defualtCardMat;        

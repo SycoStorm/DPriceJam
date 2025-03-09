@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -9,7 +10,7 @@ public class GameController : MonoBehaviour
 {
     public Data data;
     public LevelManager levelManager;
-
+    public Timer timer;
     [SerializeField] int currentBatchId;
     [SerializeField] int currentMatchId;
     [SerializeField] int currentScore;
@@ -17,11 +18,16 @@ public class GameController : MonoBehaviour
     [SerializeField] InGameCard currentCard;
 
     [SerializeField] TMPro.TextMeshProUGUI scoreText;
+    [SerializeField] GameObject NextRoundButton;
     bool canFlip = true;
-    
+    [SerializeField] GameObject scoreTimeBoard;
+    [SerializeField] GameObject menu;
+
+    public UnityEvent OnGameFinished;
+    public UnityEvent OnMenuClose;
+  
     private void OnEnable()
     {
-       // GameActions.FlipCard += OnFlip;
 
 #if UNITY_EDITOR
         EditorApplication.playModeStateChanged += CheckEditorState;
@@ -30,20 +36,52 @@ public class GameController : MonoBehaviour
 
     private void OnDisable()
     {
-      //  GameActions.FlipCard -= OnFlip;
 #if UNITY_EDITOR
         EditorApplication.playModeStateChanged -= CheckEditorState;
 #endif
     }
 
+    private void Start()
+    {
+        currentScore = data.GetOverallScore();
+        UpdateScore(currentScore);
+        if(data.GetCurrentLevel() > 3)
+        {
+            OnGameFinished?.Invoke();
+            scoreTimeBoard.SetActive(false);
+        }
+        else
+        {
+            timer.StartTimer();
+        }
+       
+    }
+
     private void Update()
     {
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            if(menu.activeInHierarchy == true)
+            {
+                OnMenuClose?.Invoke();
+                timer.StartTimer();
+               
+            }
+            else
+            {
+                menu.SetActive(true);
+                timer.StopTimer();
+            }
+        }
         if(canFlip && Input.GetMouseButtonUp(0))
         {
             RayCast();
         }
     }
-
+    public void UpdateScore(int score)
+    {
+        scoreText.text = $"Score: {currentScore}";
+    }
     public void OnFlip(InGameCard cardFlipped)
     {
         if(data.Turn == 0) //if it's the first flip
@@ -66,7 +104,10 @@ public class GameController : MonoBehaviour
             {
                 if(levelManager.CheckIfAllCardsFlipped() == true)
                 {
-                    scoreText.text = $"All Done! Final score:{currentScore}";
+                    timer.StopTimer();
+                    currentScore += timer.GetTimeBonus();
+                    scoreText.text = $" LevelFinished! Score:{currentScore}";
+                    NextRoundButton.gameObject.SetActive(true);
                 }
             }
             
@@ -145,5 +186,15 @@ public class GameController : MonoBehaviour
     {
         data.OnLevelEnd(currentScore);
         data.ChangeNextLevel();
+    }
+
+    public void BackToMain()
+    {
+        data.BackToMainMenu();
+    }
+
+    public void OnClickQuit()
+    {
+        Application.Quit();       
     }
 }

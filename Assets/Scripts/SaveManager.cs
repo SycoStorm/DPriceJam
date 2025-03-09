@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public static class SaveManager 
 {
-    // Start is called before the first frame update
-    void Start()
+   public static SaveData dataHolder;
+    public static int GetHighScore()
     {
-        
+        dataHolder = new SaveData();
+        dataHolder =  SaveJson.Load();
+        return dataHolder.highScore;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void SavenewScore(SaveData saveData)
     {
-        
+        if (saveData != null)
+        {
+            SaveJson.Save(saveData);
+        }
     }
 }

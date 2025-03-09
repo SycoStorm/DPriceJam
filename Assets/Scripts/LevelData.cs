@@ -34,6 +34,7 @@ public class LevelData : ScriptableObject
 
     public int GetCurrentLevel()
     {
+        currentLevel = gameData.GetCurrentLevel();
         return currentLevel;
     }
 }

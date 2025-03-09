@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b73d096f4c8124dadb8dc24658598309, type: 3}
-  m_Name: Life
+  m_Name: Happy
   m_EditorClassIdentifier: 
   pointsGained: 1
-  sprite: {fileID: 21300000, guid: 301a919056c7cb542979a35415235d44, type: 3}
-  batchId: 4
+  sprite: {fileID: 21300000, guid: d977db2022c7e9f429f7a4761275cabd, type: 3}
+  batchId: 5
   matchId: 1
   pointsMultiplier: 2
