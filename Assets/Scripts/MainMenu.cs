@@ -31,6 +31,7 @@ public class MainMenu : MonoBehaviour
     {
         SaveManager.GetHighScore();
     }
+#if UNITY_EDITOR
     public void CheckEditorState(PlayModeStateChange state)
     {
         if (state == PlayModeStateChange.ExitingPlayMode)
@@ -38,7 +39,7 @@ public class MainMenu : MonoBehaviour
             data.ResetAllLevelsAndScore();
         }
     }
-
+#endif
     public void OnClickCredits()
     {
         if(credits.activeInHierarchy == true)

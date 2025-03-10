@@ -66,12 +66,14 @@ public class GameController : MonoBehaviour
             {
                 OnMenuClose?.Invoke();
                 timer.StartTimer();
+                canFlip = true;
                
             }
             else
             {
                 menu.SetActive(true);
                 timer.StopTimer();
+                canFlip = false;
             }
         }
         if(canFlip && Input.GetMouseButtonUp(0))
@@ -181,7 +183,7 @@ public class GameController : MonoBehaviour
             }
         }
     }
-
+#if UNITY_EDITOR
     public void CheckEditorState(PlayModeStateChange state)
     {
         if(state == PlayModeStateChange.ExitingPlayMode)
@@ -189,13 +191,25 @@ public class GameController : MonoBehaviour
             data.ResetAllLevelsAndScore();
         }
     }
-
+#endif
     public void FinilizeData()
     {
         data.OnLevelEnd(currentScore);
         data.ChangeNextLevel();
     }
 
+    public void BackToGame()
+    {
+       Invoke("DelayCanFlip",.2f);
+    }
+    public void DelayCanFlip()
+    {
+        canFlip = true;
+    }
+    public void OpenMenu()
+    {
+        canFlip = false;
+    }
     public void BackToMain()
     {
         data.BackToMainMenu();
