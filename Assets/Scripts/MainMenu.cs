@@ -8,6 +8,7 @@ using UnityEditor;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] Data data;
+    [SerializeField] GameObject credits;
     private void OnEnable()
     {
 #if UNITY_EDITOR
@@ -36,5 +37,22 @@ public class MainMenu : MonoBehaviour
         {
             data.ResetAllLevelsAndScore();
         }
+    }
+
+    public void OnClickCredits()
+    {
+        if(credits.activeInHierarchy == true)
+        {
+            credits.gameObject.SetActive(false);
+        }
+        else
+        {
+            credits.gameObject.SetActive(true);
+        }
+    }
+
+    public void OnClickQuit()
+    {
+        Application.Quit();
     }
 }

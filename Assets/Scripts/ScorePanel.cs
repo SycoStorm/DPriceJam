@@ -7,8 +7,6 @@ public class ScorePanel : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI feedbackText;
     [SerializeField] TextMeshProUGUI scoreOneText;
-    [SerializeField] TextMeshProUGUI scoreTwoText;
-    [SerializeField] TextMeshProUGUI scorethreeText;
     [SerializeField] Data data;
     int savedScore;
     int newScore;

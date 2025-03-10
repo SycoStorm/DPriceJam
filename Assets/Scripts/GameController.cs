@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
 
     public UnityEvent OnGameFinished;
     public UnityEvent OnMenuClose;
+    public UnityEvent OnFlipCard;
   
     private void OnEnable()
     {
@@ -118,8 +119,14 @@ public class GameController : MonoBehaviour
 
     public void DelayedFlip()
     {
-        previousCard.UnFlipCard();
-        currentCard.UnFlipCard();
+        if (previousCard)
+        {
+            previousCard.UnFlipCard();
+        }
+        if (currentCard)
+        {
+            currentCard.UnFlipCard();
+        }
         previousCard = null;
         canFlip = true;
     }
@@ -143,7 +150,7 @@ public class GameController : MonoBehaviour
             {
                 currentScore += cardData.ReturnOppositesPointsGain();
             }
-            scoreText.text = currentScore.ToString();
+            UpdateScore(currentScore);
             return true;
         }
         else
@@ -169,6 +176,7 @@ public class GameController : MonoBehaviour
                 currentCard = gameCard;
                 gameCard.OnClickFlip();
                 OnFlip(gameCard);
+                OnFlipCard?.Invoke();
                 
             }
         }

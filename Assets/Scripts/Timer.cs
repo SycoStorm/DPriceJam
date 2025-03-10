@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
         if(timerText && isTrackingTime)
         {
             timer += Time.deltaTime;
-            timerText.text = timer.ToString("#.00");
+            timerText.text = $"Time: {timer.ToString("#.00")}";
         }
     }
 
@@ -32,18 +32,18 @@ public class Timer : MonoBehaviour
     {
        if(timer < 30)
         {
-            timerText.text = timer.ToString("#.00") + $" \n Congrats you got a time bonus of {5} points";
+            timerText.text = $"Time: {timer.ToString("#.00")} \n Congrats you got a time bonus of {5} points";
             return 5;
             
         }
        else if(timer < 60)
         {
-            timerText.text = timer.ToString("#.00") + $"\n Congrats you got a time bonus of {3} points";
+            timerText.text = $"Time: {timer.ToString("#.00")} \n Congrats you got a time bonus of {3} points";
             return 3;
         }
        else if(timer < 90)
         {
-            timerText.text = timer.ToString("#.00") + $"\n Congrats you got a time bonus of {1} points";
+            timerText.text = $"Time: {timer.ToString("#.00")} \n Congrats you got a time bonus of {1} points";
             return 1;
         }
        else
